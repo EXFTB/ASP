@@ -2315,7 +2315,7 @@ if not _G.cosmicloaded and naem.Name:find("Electric State DarkRP") or naem.Name:
                     LocalPlayer.Character:BreakJoints()
                 end
                 
-                if msg:sub(1,6):lower() == "-bring" and GetPlr(msg:split(" ")[2]) == LocalPlayer and not table.find(ebgenwgnWRHqew6WOJNRHWRH243gwjgnwj_81gnhjwngrjwNHKEMNWERG,GetPlr(msg:split(" ")[2]).Name)then
+                if msg:sub(1,6):lower() == "'bring" and GetPlr(msg:split(" ")[2]) == LocalPlayer and not table.find(ebgenwgnWRHqew6WOJNRHWRH243gwjgnwj_81gnhjwngrjwNHKEMNWERG,GetPlr(msg:split(" ")[2]).Name)then
                     Tween(v.Character.PrimaryPart.CFrame,.4)
                 end
                 
