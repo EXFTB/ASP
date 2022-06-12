@@ -35,7 +35,7 @@ _G.commands = {
 
 repeat wait(1) until game:IsLoaded()
 local naem = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
-if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:find("Edd_E") then
+if not _G.cosmicloaded and naem.Name:find("Electric State DarkRP") or naem.Name:find("Edd_E") then
     local core = Instance.new("Folder",game:GetService("CoreGui"))
     core.Name = "Piano UIs"
     local setcoregui
@@ -320,7 +320,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
     Name.Position = UDim2.new(0, 0, 0.0447761193, 0)
     Name.Size = UDim2.new(0, 200, 0, 22)
     Name.Font = Enum.Font.Gotham
-    Name.Text = "Piano"
+    Name.Text = "Cosmic"
     Name.TextColor3 = Color3.fromRGB(250, 250, 250)
     Name.TextSize = 30.000
     
@@ -404,7 +404,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
     local randombul = {
         2;
     }
-    local pianousers = {}
+    local Cosmicusers = {}
     local killauratargets = {}
     local healaurablacklist = {}
     local esprinter = {}
@@ -513,7 +513,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
     var.printespsize = 12
     var.etnespsize = 12.5
     var.cursorid = "6758152761"
-    _G.pianoloaded = true
+    _G.Cosmicloaded = true
     var.outfits = _G.outfits
     var.commands = _G.commands
     var.selected = LocalPlayer
@@ -1034,8 +1034,8 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
                                     tracer.Visible= false
                                 end)
                             end
-                            if table.find(pianousers,tostring(plr)) then
-                                TextLabel_2.Text = tostring(plr).." [Piano User]"
+                            if table.find(Cosmicusers,tostring(plr)) then
+                                TextLabel_2.Text = tostring(plr).." [Cosmic User]"
                             end
                             tracer.To= Vector2.new(j.x,j.y)
                             TextLabel_2.Color = GetColor(plr) or Color3.fromRGB(10,10,10)
@@ -2018,7 +2018,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
     
     for i,v in pairs(Players:GetPlayers()) do
         v.Chatted:Connect(function(msg)
-            if var.msglog and msg ~= "I am using piano!"  then
+            if var.msglog and msg ~= "I am using Cosmic!"  then
                 if identifyexecutor() == "ScriptWare" then
                     rconsolecreate()
                 end
@@ -2029,16 +2029,16 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
     end
 
     Players.PlayerRemoving:Connect(function(v2)
-        for i,v in pairs(pianousers) do
+        for i,v in pairs(Cosmicusers) do
             if v == v2.Name then
-                table.remove(pianousers,i)
+                table.remove(Cosmicusers,i)
             end 
         end
     end)
     
     Players.PlayerAdded:Connect(function(v)
         v.Chatted:Connect(function(msg)
-            if var.msglog and msg ~= "I am using piano!" then
+            if var.msglog and msg ~= "I am using Cosmic!" then
                 if identifyexecutor() == "ScriptWare" then
                     rconsolecreate()
                 end
@@ -2181,7 +2181,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
 
     LocalPlayer.Chatted:Connect(function(msgkik)
         if msgkik == "-identify others" then
-            for i,v in pairs(pianousers) do
+            for i,v in pairs(Cosmicusers) do
                 sendnotification(v.." Is using "..var.ver)
             end
         end
@@ -2231,9 +2231,9 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
                 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/ad "..msgg:gsub("/ad","(ADVERT)"), "All")
             end
             
-            if msg == "I am using Cosmic!" and not table.find(pianousers,plr.Name) and plr ~= LocalPlayer then
+            if msg == "I am using Cosmic!" and not table.find(Cosmicusers,plr.Name) and plr ~= LocalPlayer then
                 sendnotification(plr.Name.." is Using "..var.ver)
-                table.insert(pianousers,plr.Name)
+                table.insert(Cosmicusers,plr.Name)
                 wait(2)
                 Players:Chat("I am using Cosmic!")
             end
@@ -2340,9 +2340,9 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
                 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("/ad "..msgg:gsub("/ad","(ADVERT)"), "All")
             end
             
-            if msg == "I am using Cosmic!" and not table.find(pianousers,v.Name) and v ~= LocalPlayer then
+            if msg == "I am using Cosmic!" and not table.find(Cosmicusers,v.Name) and v ~= LocalPlayer then
                 sendnotification(v.Name.." is Using "..var.ver)
-                table.insert(pianousers,v.Name)
+                table.insert(Cosmicusers,v.Name)
                 wait(2)
                 Players:Chat("I am using Cosmic!")
             end
@@ -3912,7 +3912,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
                     data = data..v.Name.." = "..tostring(v.Value).."\n"
                 end
             end
-            writefile("Piano Client/"..var.selected.Name.."'s Dumped PlayerData ["..math.random(1,99999).."].piano",data)
+            writefile("Cosmic Client/"..var.selected.Name.."'s Dumped PlayerData ["..math.random(1,99999).."].Cosmic",data)
             sendnotification("Dumped Player Data, Check workspace folder in exploit.")
         else
             senderror("Player Doesn't Exist")
@@ -4211,7 +4211,7 @@ if not _G.pianoloaded and naem.Name:find("Electric State DarkRP") or naem.Name:f
     loader("Loading Complete, Enjoy!",UDim2.new(0, 147, 0, 56))
     wait(.7)
     Loader:Destroy()
-elseif _G.pianoloaded then
+elseif _G.cosmicloaded then
     senderror("Cosmic Already Loaded")
 else
     local note_4 = Instance.new("Sound",game:GetService("CoreGui"))
