@@ -1,20 +1,6 @@
 ---@diagnostic disable: undefined-global
-_G.outfits = {
-    {Name = "Brochacho", ID = "151675683.7449702628,1029025,2570215639,2570216445"};
-    {Name = "Winter Soldier", ID = "4905763116,6005989187.6621522004,5945173790.6621521384,5945179001.6621521624,5945176809.6621521624,6621533722,6621534799"};
-    {Name = "Freedom Dispencer", ID = "4753644287,6005989187.7068695271,5945173790.7068695271,5945179001.7068695271,5945176809.7068695271,6993139878.7068695271,723751472,723751637"};
-    {Name = "Medieval Brochacho", ID = "151675683.4383940795,13386385,2832699137,2832700156,4267030909,2274742626.4384429792,215748322.2675785344"};
-    {Name = "Salad cat, Bodypillow", ID = "7234993545,6943668239,7331659064,2226792069,6995761910.5633138908"};
-    {Name = "Tactical Exploiter Outfit", ID = "6869979194,4753644287,5132090227,7168531029,4036737464,7266232695,7266232695,6201866676,5294455006,5294455667,4790788200.2950139156 "};
-    {Name = "Rick", ID = "6317687313,4566741415,4556514658.100769879,470474406,470474358,7029069143.755299502"};
-}
 
 _G.commands = {
-    {name = "kill",info = "Kills Specific Player",func = function(args)
-        if GetPlr(args[1]) ~= nil and args ~= nil then
-            rape(GetPlr(args[1]))
-        end
-    end},
     {name = "goto",info = "Teleports to Specific Player",func = function(args)
         if GetPlr(args[1]) ~= nil and args ~= nil and IsValid(GetPlr(args[1])) then
             Tween(GetPlr(args[1]).Character:GetPivot(),.3)
