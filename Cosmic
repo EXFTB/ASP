@@ -2461,7 +2461,7 @@ if not _G.cosmicloaded and naem.Name:find("Electric State DarkRP") or naem.Name:
     
     local combattab = Main.SideTab("Combat",2.76)
     
-    local Combatw = combattab.Section("Silent Aim Settings (Remington not supported)")
+    local Combatw = combattab.Section("Silent Aim Settings (Fully Functional)")
 
     Combatw.Toggle("Silent Aim",var.silentaim,function(a)
         var.silentaim = a
